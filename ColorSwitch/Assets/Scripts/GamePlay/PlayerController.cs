@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
@@ -22,5 +22,13 @@ public class PlayerController : MonoBehaviour
             playerRb.velocity = Vector2.up * jumpForce;
         }
         transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+
+    }
+    void SetRandomColor()
+    {
+
     }
 }

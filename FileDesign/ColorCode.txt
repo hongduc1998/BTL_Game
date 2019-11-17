@@ -1,0 +1,4 @@
+cyan 	35e2f2
+yellow 	f6df0e
+magenta 8c13fb
+pink 	ff0080
