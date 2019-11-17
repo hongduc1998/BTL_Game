@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameMenuController : MonoBehaviour
 {
 
+    private const string COIN_KEY = "Coin";
     public static GameMenuController instance;
     // Use this for initialization
     void Start()
@@ -19,10 +20,12 @@ public class GameMenuController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SetCoin(int coin)
     {
-
+        PlayerPrefs.SetInt(COIN_KEY, coin);
+    }
+    public int getCoin()
+    {
+        return PlayerPrefs.GetInt(COIN_KEY);
     }
 }
