@@ -10,6 +10,8 @@ TagManager:
   - Pink
   - ColorChanger
   - Star
+  - FinishLine
+  - LosePoint
   layers:
   - Default
   - TransparentFX

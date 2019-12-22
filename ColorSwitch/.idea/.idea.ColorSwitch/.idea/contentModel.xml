@@ -11,6 +11,7 @@
           <e p="MenuScenceController.cs" t="Include" />
         </e>
         <e p="GamePlay" t="Include">
+          <e p="CameraFollow.cs" t="Include" />
           <e p="GameController.cs" t="Include" />
           <e p="ObstacleController.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />

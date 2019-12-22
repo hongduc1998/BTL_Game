@@ -9,12 +9,19 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/ObstacleController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMenu/GameMenuController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/CameraFollow.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/ObstacleController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameController.cs" />
       </list>
     </option>
   </component>

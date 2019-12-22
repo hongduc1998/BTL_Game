@@ -6,49 +6,110 @@ public class PlayerController : MonoBehaviour
 {
 
     private Rigidbody2D playerRb;
+    
     [SerializeField] private float jumpForce;
     [SerializeField] private float rotateSpeed;
+    
     private string currentColor;
+    
     [SerializeField] private SpriteRenderer playerSr;
+    
     [SerializeField] private Color cyanColor;
     [SerializeField] private Color yellowColor;
     [SerializeField] private Color magentaColor;
     [SerializeField] private Color pinkColor;
-//    private int temp;
+
+    public bool allowJump;
+    public bool allowRotate;
+
+    private int temp;
+    
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         SetRandomColor();
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+//        if (Input.GetMouseButtonDown(0))
+//        {
+//            playerRb.velocity = Vector2.up * jumpForce;
+//        }
+
+        Jump();
+
+        allowRotate = !GameController.Instance.isPausing;
+
+        if (allowRotate)
         {
-            playerRb.velocity = Vector2.up * jumpForce;
+           transform.Rotate(0, 0, rotateSpeed * Time.deltaTime); 
         }
-        transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+        
     }
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag(currentColor))
+        
+        if (other.CompareTag("ColorChanger"))
         {
-            Time.timeScale = 0;
+            SetRandomColor();
+            Destroy(other.gameObject);
+            return;
         }
         
+        if (!other.CompareTag(currentColor))
+        {
+            playerRb.simulated = false;
+
+            allowRotate = false;
+            
+            GameController.Instance.Lose();
+        }
+
+        if (other.CompareTag("FinishLine"))
+        {
+            playerRb.simulated = false;
+
+            allowRotate = false;
+            
+            GameController.Instance.Win();
+        }
+
+        if (other.CompareTag("LosePoint"))
+        {
+            playerRb.simulated = false;
+
+            allowRotate = false;
+            
+            GameController.Instance.Lose();
+        }
+        
+    }
+
+    private void Jump()
+    {
+        if (allowJump)
+        {
+            allowJump = false;
+            playerRb.velocity = Vector2.up * jumpForce;
+        }
+    }
+
+    public void JumpButton()
+    {
+        allowJump = true;
     }
     
     private void SetRandomColor()
     {
         int index = Random.Range(0, 4);
-        int temp = index;
+//        int temp = index;
         while (temp == index)
         {
             index = Random.Range(0, 4);
         }
-        index = temp;
+//        index = temp;
         switch (index)
         {
             case 0:
@@ -68,5 +129,15 @@ public class PlayerController : MonoBehaviour
                 playerSr.color = pinkColor;
                 break;
         }
+
+        temp = index;
     }
+
+    public void ResetPlayer()
+    {
+        transform.position = new Vector3(0, -3, 0);
+        playerRb.simulated = true;
+        allowJump = false;
+    }
+    
 }
