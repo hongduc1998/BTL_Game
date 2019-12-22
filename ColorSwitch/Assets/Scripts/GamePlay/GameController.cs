@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 
 	public static GameController Instance;
 
-	[SerializeField] private PlayerController playerController;
+//	[SerializeField] private PlayerController playerController;
 	[SerializeField] private Transform mainCam;
 
 	[SerializeField] private GameObject[] levelPrefab;
@@ -19,8 +19,6 @@ public class GameController : MonoBehaviour
 
 	private GameObject level;
 
-	public bool isPausing;
-	
 	private void Start () {
 		if (Instance==null)
 		{
@@ -42,12 +40,14 @@ public class GameController : MonoBehaviour
 
 	public void PauseButton()
 	{
-		isPausing = true;
+		PlayerController.Instance.allowRotate = false;
+//		ObstacleController.Instance.allowRotate = false;
 	}
 
 	public void ResumeButton()
 	{
-		isPausing = false;
+		PlayerController.Instance.allowRotate = true;
+//		ObstacleController.Instance.allowRotate = true;
 	}
 
 	public void Win()
@@ -56,7 +56,6 @@ public class GameController : MonoBehaviour
 		losePanel.SetActive(false);
 		Destroy(level);
 		currentLevel += 1;
-		isPausing = true;
 	}
 
 	public void Lose()
@@ -64,34 +63,34 @@ public class GameController : MonoBehaviour
 		losePanel.SetActive(true);
 		winPanel.SetActive(false);
 		Destroy(level);
-		isPausing = true;
 	}
 
 	public void Next()
 	{
 		winPanel.SetActive(false);
-		isPausing = false;
 		GetLevel(levelPrefab[currentLevel]);
-		ResetPlayerPosition();
-		ResetCam();
+		Reset();
 	}
 
-	public void Restart()
+	public void RestartWhenLose()
 	{
 		losePanel.SetActive(false);
-		isPausing = false;
 		GetLevel(levelPrefab[currentLevel]);
-		ResetPlayerPosition();
-		ResetCam();
+		Reset();
 	}
 
-	private void ResetPlayerPosition()
+	public void RestartWhenWin()
 	{
-		playerController.ResetPlayer();
+		winPanel.SetActive(false);
+		currentLevel -= 1;
+		GetLevel(levelPrefab[currentLevel]);
+		Reset();
 	}
 
-	private void ResetCam()
+	private void Reset()
 	{
+		PlayerController.Instance.ResetPlayer();
+		PlayerController.Instance.allowRotate = true;
 		mainCam.position = new Vector3(0, 0, -10);
 	}
 	

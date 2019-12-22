@@ -179,7 +179,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -569,7 +569,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1263517760}
-        m_MethodName: Restart
+        m_MethodName: RestartWhenLose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1105,7 +1105,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1263517760}
-        m_MethodName: Restart
+        m_MethodName: RestartWhenWin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1379,7 +1379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888207a32a8269b43945c92b732ff3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 347543619}
   mainCam: {fileID: 791595597}
   levelPrefab:
   - {fileID: 1751837258789814, guid: 3563f7b3189734d449ea7e5619567700, type: 2}
@@ -1389,7 +1388,6 @@ MonoBehaviour:
   currentLevel: 0
   winPanel: {fileID: 692630973}
   losePanel: {fileID: 1333023193}
-  isPausing: 0
 --- !u!4 &1263517761
 Transform:
   m_ObjectHideFlags: 0

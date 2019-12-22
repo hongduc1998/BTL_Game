@@ -5,12 +5,24 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-    
+
     [SerializeField] private float speed;
+    public bool allowRotate;
+
+    private void Start()
+    {
+//        if (Instance==null)
+//        {
+//            Instance = this;
+//        }
+//        allowRotate = true;
+    }
 
     private void Update()
     {
-        Rotate(!GameController.Instance.isPausing);
+        allowRotate = PlayerController.Instance.allowRotate;
+        
+        Rotate(allowRotate);
     }
 
     public void Rotate(bool allow)

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
 
+    public static PlayerController Instance;
+
     private Rigidbody2D playerRb;
     
     [SerializeField] private float jumpForce;
@@ -26,20 +28,18 @@ public class PlayerController : MonoBehaviour
     
     private void Start()
     {
+        if (Instance==null)
+        {
+            Instance = this;
+        }
         playerRb = GetComponent<Rigidbody2D>();
         SetRandomColor();
+        allowRotate = true;
     }
 
     private void Update()
     {
-//        if (Input.GetMouseButtonDown(0))
-//        {
-//            playerRb.velocity = Vector2.up * jumpForce;
-//        }
-
         Jump();
-
-        allowRotate = !GameController.Instance.isPausing;
 
         if (allowRotate)
         {
@@ -83,6 +83,11 @@ public class PlayerController : MonoBehaviour
             allowRotate = false;
             
             GameController.Instance.Lose();
+        }
+
+        if (other.CompareTag("Star"))
+        {
+            SurvivalMapController.Instance.InstantiateObstacle();
         }
         
     }
