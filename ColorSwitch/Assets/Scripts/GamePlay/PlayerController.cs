@@ -14,15 +14,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Color yellowColor;
     [SerializeField] private Color magentaColor;
     [SerializeField] private Color pinkColor;
-    int temp;
-    void Start()
+//    private int temp;
+    private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         SetRandomColor();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -30,13 +30,20 @@ public class PlayerController : MonoBehaviour
         }
         transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
     }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
-
+        if (!other.CompareTag(currentColor))
+        {
+            Time.timeScale = 0;
+        }
+        
     }
-    void SetRandomColor()
+    
+    private void SetRandomColor()
     {
         int index = Random.Range(0, 4);
+        int temp = index;
         while (temp == index)
         {
             index = Random.Range(0, 4);
