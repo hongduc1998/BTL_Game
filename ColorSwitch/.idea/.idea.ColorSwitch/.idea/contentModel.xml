@@ -7,7 +7,6 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets\Scripts" t="Include">
         <e p="GameMenu" t="Include">
-          <e p="GameMenuController.cs" t="Include" />
           <e p="MenuScenceController.cs" t="Include" />
         </e>
         <e p="GamePlay" t="Include">

@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
 		}
 
 		currentLevel = 0;
-//		GetLevel(levelPrefab[currentLevel]);
+		GetLevel(levelPrefab[currentLevel]);
 
 	}
 
