@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -85,6 +86,11 @@ public class GameController : MonoBehaviour
 		currentLevel -= 1;
 		GetLevel(levelPrefab[currentLevel]);
 		Reset();
+	}
+
+	public void Home()
+	{
+		SceneManager.LoadScene("MainMenu");
 	}
 
 	private void Reset()

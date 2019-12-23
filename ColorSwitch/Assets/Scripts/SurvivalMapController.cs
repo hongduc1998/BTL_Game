@@ -107,5 +107,10 @@ public class SurvivalMapController : MonoBehaviour
 	{
 		SceneManager.LoadScene("Survival");
 	}
+
+	public void Home()
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
 	
 }

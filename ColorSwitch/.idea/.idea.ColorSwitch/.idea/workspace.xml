@@ -23,12 +23,12 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/CameraFollow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/ObstacleController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LosePoint.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMenu/MenuScenceController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMenu/GameManeger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SurvivalMapController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameController.cs" />
       </list>
     </option>
   </component>
