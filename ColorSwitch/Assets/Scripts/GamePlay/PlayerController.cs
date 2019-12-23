@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     public bool allowRotate;
 
     private int temp;
+
+    public bool isPlayerSurvival;
+
+    public int star;
     
     private void Start()
     {
@@ -55,6 +59,23 @@ public class PlayerController : MonoBehaviour
         {
             SetRandomColor();
             Destroy(other.gameObject);
+            if (isPlayerSurvival)
+            {
+                SurvivalMapController.Instance.InstantiateColorChanger();
+            }
+            return;
+        }
+
+        if (other.CompareTag("Star"))
+        {
+            SurvivalMapController.Instance.InstantiateObstacle();
+            
+            Destroy(other.gameObject);
+            star += 1;
+            if (star>=GameManeger.Instance.GetHighScore())
+            {
+                GameManeger.Instance.SetHighScore(star);
+            }
             return;
         }
         
@@ -63,8 +84,16 @@ public class PlayerController : MonoBehaviour
             playerRb.simulated = false;
 
             allowRotate = false;
+
+            if (!isPlayerSurvival)
+            {
+                GameController.Instance.Lose();
+            }
+            else
+            {
+                SurvivalMapController.Instance.Lose();
+            }
             
-            GameController.Instance.Lose();
         }
 
         if (other.CompareTag("FinishLine"))
@@ -72,8 +101,11 @@ public class PlayerController : MonoBehaviour
             playerRb.simulated = false;
 
             allowRotate = false;
-            
-            GameController.Instance.Win();
+
+            if (!isPlayerSurvival)
+            {
+                GameController.Instance.Win();
+            }
         }
 
         if (other.CompareTag("LosePoint"))
@@ -81,13 +113,15 @@ public class PlayerController : MonoBehaviour
             playerRb.simulated = false;
 
             allowRotate = false;
-            
-            GameController.Instance.Lose();
-        }
 
-        if (other.CompareTag("Star"))
-        {
-            SurvivalMapController.Instance.InstantiateObstacle();
+            if (!isPlayerSurvival)
+            {
+                GameController.Instance.Lose();
+            }
+            else
+            {
+                SurvivalMapController.Instance.Lose();
+            }
         }
         
     }

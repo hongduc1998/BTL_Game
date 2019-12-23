@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab8eabd6-3c7e-405f-a7d5-08f0386e7369" name="Default Changelist" comment="" />
@@ -9,20 +9,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LosePoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/ObstacleController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/GameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SurvivalMapController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMenu/GameManeger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMenu/MenuScenceController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GamePlay/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/CameraFollow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SurvivalMapController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/ObstacleController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LosePoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMenu/MenuScenceController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMenu/GameManeger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GamePlay/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SurvivalMapController.cs" />
       </list>
     </option>
   </component>

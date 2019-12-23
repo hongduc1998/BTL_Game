@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\H.D.Coder\.Rider2019.2\system\extResources" t="IncludeRecursive" />
@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets\Scripts" t="Include">
         <e p="GameMenu" t="Include">
+          <e p="GameManeger.cs" t="Include" />
           <e p="MenuScenceController.cs" t="Include" />
         </e>
         <e p="GamePlay" t="Include">
@@ -15,6 +16,7 @@
           <e p="ObstacleController.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
         </e>
+        <e p="LosePoint.cs" t="Include" />
         <e p="SurvivalMapController.cs" t="Include" />
       </e>
       <e p="ColorSwitch.sln" t="IncludeFlat" />
